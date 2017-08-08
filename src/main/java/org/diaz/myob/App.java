@@ -44,8 +44,7 @@ public class App {
 
 		List<List<String>> lines = readLinesFromCSV(getFilePath());
 
-		System.out.println("");
-		System.out.println("Processing...");
+		printStartingMessage();
 		
 		List<Payslip> payslips = lines.stream().map(line->payslipGenerator.generatePayslip(parseEmployeeDetails(line))
 				).collect(Collectors.toList());
@@ -54,6 +53,15 @@ public class App {
 		
 		payslips.forEach(ps->printPayslip(ps));
 		
+		printClosingMessage();
+	}
+
+	protected void printStartingMessage() {
+		System.out.println("");
+		System.out.println("Processing...");
+	}
+
+	protected void printClosingMessage() {
 		System.out.println("");
 		System.out.println("Press Enter key to exit.");
         try {
@@ -95,9 +103,11 @@ public class App {
 			System.out.println("An exception occurred while parsing line. "
 					+ "Please make sure it meets the formatting criteria: " + line.toString());
 			e.printStackTrace();
-			System.out.println("Program will exit.");
-			System.exit(-1);
+			
 		}
+		
+		System.out.println("Program will exit.");
+		System.exit(-1);
 		return null;
 	}
 

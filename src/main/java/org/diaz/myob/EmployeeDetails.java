@@ -13,6 +13,12 @@ public class EmployeeDetails {
 	public EmployeeDetails(String firstName, String lastName, int salary, double superRate, LocalDate fromDate,
 			LocalDate toDate) {
 		super();
+		if (salary<=0) {
+			throw new IllegalArgumentException("Salary must be a possitive integer");
+		}
+		if (superRate<0 || superRate>50.0) {
+			throw new IllegalArgumentException("Super rate must be between 0% - 50% inclusive");
+		}
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.salary = salary;

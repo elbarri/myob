@@ -1,0 +1,15 @@
+This java coding excercise is intended for MYOB.
+
+The main class can be found in App.java
+
+Uppon starting it:
+ 1) Asks for the csv file path
+ 2) Calculates salaries
+ 3) Prints output to screen in csv format
+ 
+NOTE: Data will be processed assuming it belongs to fiscal year 2012-2013.
+It also assumes the csv file contains only valid content and meets the following format: 
+David,Rudd,60050,9%,01/March/2013 – 31/March/2013
+Ryan,Chen,120000,10%,01/March/2013 – 31/March/2013
+
+Example file can be found at project´s roots directory (file.csv)
